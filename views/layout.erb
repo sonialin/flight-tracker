@@ -1,0 +1,10 @@
+<html>
+<title>Flight Tracker</title>
+<link rel="stylesheet" href="/stylesheets/main.css">
+<body>
+  <% if session[:message] %>
+    <div class="message"><%= session.delete(:message) %></div>
+  <% end %>
+  <%= yield %>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<h1>List of flights</h1>
+<table class="flight-schedule">
+  <tr>
+    <th>Flight Number</th>
+    <th>Airline</th> 
+    <th>From</th>
+    <th>Scheduled Arrival</th>
+    <th>Gate</th>
+    <th>Status</th>
+  </tr>
+  <% @flights.each do |flight_number, info| %>
+      <tr>
+        <td>
+          <%= flight_number %>
+        </td>
+        <% info.each do |field, value|%>
+          <td>
+            <%= value %>
+          </td>
+        <% end %>
+        <td>
+          <%= status(info['Schedule']) %>
+        </td>
+        <td>
+          <a href="/<%= flight_number%>">Details</a>
+        </td>
+      </tr>
+  <% end %>
+</table>
