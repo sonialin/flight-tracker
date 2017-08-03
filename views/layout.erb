@@ -2,8 +2,13 @@
 <title>Flight Tracker</title>
 <link rel="stylesheet" href="/stylesheets/main.css">
 <body>
+  <form action="/" method="get">
+    <input name="search" value="<%= params[:search] %>" placeholder="Enter flight number">
+    <button type="submit">Search</button>
+  </form>
+  <p><a href="/">List all flights</a>
   <% if session[:message] %>
-    <div class="message"><%= session.delete(:message) %></div>
+    <p class="message"><%= session.delete(:message) %></p>
   <% end %>
   <%= yield %>
 </body>

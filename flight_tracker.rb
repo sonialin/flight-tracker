@@ -8,14 +8,21 @@ configure do
 end
 
 helpers do
-  def status(arrival_time)
-    parsed_time = DateTime.strptime(arrival_time, "%M:%S")
-    if DateTime.now > parsed_time
-      "Arrived"
+  def arrival_status(arrival_time)
+    if Time.parse(arrival_time) < Time.now
+      "On the air"
     else
-      "On the way"
+      "Arrived"
     end
   end
+
+  def main_info(flight_info)
+    flight_info.select{|key, value| main_fields.include? key}
+  end
+end
+
+def main_fields
+  ['Airline', 'From', 'Schedule', 'Gate']
 end
 
 def flights
@@ -24,7 +31,16 @@ def flights
 end
 
 get "/" do
-  @flights = flights
+  if params[:search]
+    if flights.key? params[:search]
+      @flights = flights.select{|key, value|key == params[:search]}
+    else
+      session[:message] = "Please enter a valid flight number."
+      redirect "/"
+    end
+  else
+    @flights = flights
+  end
   erb :index
 end
 
@@ -32,9 +48,9 @@ get "/:flight_number" do
   @flight_number = params[:flight_number]
   if flights.key?(@flight_number)
     @flight_info = flights[@flight_number]
+    erb :view
   else
-    session[:message] = "Please enter a valid flight number"
+    session[:message] = "Please enter a valid flight number."
     redirect "/"
   end
-  erb :view
 end

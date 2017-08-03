@@ -13,13 +13,13 @@
         <td>
           <%= flight_number %>
         </td>
-        <% info.each do |field, value|%>
+        <% main_info(info).each do |field, value|%>
           <td>
             <%= value %>
           </td>
         <% end %>
         <td>
-          <%= status(info['Schedule']) %>
+          <%= arrival_status(info['Schedule']) %>
         </td>
         <td>
           <a href="/<%= flight_number%>">Details</a>

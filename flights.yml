@@ -3,18 +3,26 @@
   'From': "Atlanta, GA"
   'Schedule': '14:25'
   'Gate': 'B25'
+  'Distance': '592 miles'
+  'Aircraft': 'Boeing 737-800'
 'WN1353':
   'Airline': 'Southwest Airlines'
   'From': "Fort Myers, FL"
   'Schedule': '14:35'
   'Gate': 'B14'
+  'Distance': '1107 miles'
+  'Aircraft': 'Boeing 737-700'
 'WN1145':
   'Airline': 'Southwest Airlines'
   'From': "Los Angeles, CA"
   'Schedule': '14:55'
   'Gate': 'B5'
+  'Distance': '1747 miles'
+  'Aircraft': 'Boeing 737-700'
 'WN3320':
   'Airline': 'Southwest Airlines'
   'From': "Philadelphia, PA"
   'Schedule': '15:00'
   'Gate': 'B10'
+  'Distance': "251 miles"
+  'Aircraft': 'Boeing 737-800'
