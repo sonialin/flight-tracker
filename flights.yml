@@ -26,3 +26,45 @@
   'Gate': 'B10'
   'Distance': "251 miles"
   'Aircraft': 'Boeing 737-800'
+'WN3521':
+  'Airline': 'Southwest Airlines'
+  'From': "Tampa, FL"
+  'Schedule': '19:30'
+  'Gate': 'B16'
+  'Distance': "1186 miles"
+  'Aircraft': 'Boeing 737-700'
+'WN4531':
+  'Airline': 'Southwest Airlines'
+  'From': "Atlanta, GA"
+  'Schedule': '20:30'
+  'Gate': 'A15'
+  'Distance': "731 miles"
+  'Aircraft': 'Boeing 737-700'
+'WN1139':
+  'Airline': 'Southwest Airlines'
+  'From': "Sacramento, CA"
+  'Schedule': '20:51'
+  'Gate': 'B3'
+  'Distance': "2055 miles"
+  'Aircraft': 'Boeing 737-800'
+'VS2617':
+  'Airline': 'Virgin Atlantic'
+  'From': "Atlanta, GA"
+  'Schedule': '21:06'
+  'Gate': 'A7'
+  'Distance': "731 miles"
+  'Aircraft': 'Boeing 717-200'
+'DL2470':
+  'Airline': 'Delta Airlines'
+  'From': "Atlanta, GA"
+  'Schedule': '22:55'
+  'Gate': 'A5'
+  'Distance': "731 miles"
+  'Aircraft': 'Boeing 717-200'
+'WN5743':
+  'Airline': 'Southwest Airlines'
+  'From': "Fort Lauderdale, FL"
+  'Schedule': '22:20'
+  'Gate': 'B7'
+  'Distance': "1369 miles"
+  'Aircraft': 'Boeing 737-700'

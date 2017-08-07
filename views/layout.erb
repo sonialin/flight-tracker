@@ -2,13 +2,43 @@
 <title>Flight Tracker</title>
 <link rel="stylesheet" href="/stylesheets/main.css">
 <body>
-  <form action="/" method="get">
-    <input name="search" value="<%= params[:search] %>" placeholder="Enter flight number">
-    <button type="submit">Search</button>
-  </form>
+  <table class="search-table">
+    <tr>
+      <th>Search by:</th>
+    </tr>
+    <form action="/" method="get">
+      <tr>
+        <td><label for="place_of_departure">Place of Departure</label></td>
+        <td><input name="place_of_departure" value="<%= params[:place_of_departure] %>" placeholder="e.g. Fort Myers, FL"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><label for="arrival_time">Approximate Arrival Time</label></td>
+        <td><input name="arrival_time" value="<%= params[:arrival_time] %>" placeholder="e.g. 15:30"></td>
+        <td><button type="submit">Search</button></td>
+      </tr>
+    </form>
+  </table>
+  <br />
+
+  <table class="search-table">
+    <tr>
+      <th>OR Search by:</th>
+    </tr>
+    <form action="/" method="get">
+      <tr>
+        <td><label for="flight_number">Flight Number</label></td>
+        <td><input name="flight_number" value="<%= params[:flight_number] %>" placeholder="e.g. WN4060"></td>
+        <td><button type="submit">Search</button></td>
+      </tr>
+    </form>
+  </table>
+
   <p><a href="/">List all flights</a>
   <% if session[:message] %>
-    <p class="message"><%= session.delete(:message) %></p>
+  <div>
+    <span class="message"><%= session.delete(:message) %></span>
+  </div>
   <% end %>
   <%= yield %>
 </body>

@@ -2,6 +2,10 @@
   padding: 10;
 }
 
-.flight-schedule th {
-  /*text-align: center*/
+span.message {
+  background-color: yellow;
+}
+
+.search-table th {
+  text-align: left;
 }
