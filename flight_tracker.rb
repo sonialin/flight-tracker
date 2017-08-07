@@ -20,6 +20,10 @@ helpers do
   def main_info(flight_info)
     flight_info.select{|key, value| main_fields.include? key}
   end
+
+  def sort_by_time(flights)
+    flights.sort_by{|number, info| Time.parse(info['Schedule'])}
+  end
 end
 
 before do

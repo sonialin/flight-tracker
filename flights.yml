@@ -68,3 +68,24 @@
   'Gate': 'B7'
   'Distance': "1369 miles"
   'Aircraft': 'Boeing 737-700'
+'WN1139':
+  'Airline': 'Southwest Airlines'
+  'From': "Sacramento, CA"
+  'Schedule': '9:05'
+  'Gate': 'B3'
+  'Distance': "2055 miles"
+  'Aircraft': 'Boeing 737-800'
+'WN5390':
+  'Airline': 'Southwest Airlines'
+  'From': "Phoenix, AZ"
+  'Schedule': '1:30'
+  'Gate': 'B11'
+  'Distance': "1741 miles"
+  'Aircraft': 'Boeing 737-700'
+'WN5300':
+  'Airline': 'Southwest Airlines'
+  'From': "Los Angeles"
+  'Schedule': '1:55'
+  'Gate': 'B16'
+  'Distance': "1747 miles"
+  'Aircraft': 'Boeing 737-700'

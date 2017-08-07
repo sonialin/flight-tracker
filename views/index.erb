@@ -1,4 +1,4 @@
-<h1>List of flights</h1>
+<h1>List of Flights to Chicago Midway (MDW)</h1>
 <table class="flight-schedule">
   <tr>
     <th>Flight Number</th>
@@ -8,7 +8,7 @@
     <th>Gate</th>
     <th>Status</th>
   </tr>
-  <% @flights.each do |flight_number, info| %>
+  <% sort_by_time(@flights).each do |flight_number, info| %>
       <tr>
         <td>
           <%= flight_number %>
