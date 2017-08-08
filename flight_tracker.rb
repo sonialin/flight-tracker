@@ -18,11 +18,11 @@ helpers do
   end
 
   def main_info(flight_info)
-    flight_info.select{|key, value| main_fields.include? key}
+    flight_info.select { |key, _| main_fields.include? key }
   end
 
   def sort_by_time(flights)
-    flights.sort_by{|number, info| Time.parse(info['Schedule'])}
+    flights.sort_by { |_, info| Time.parse(info['Schedule']) }
   end
 end
 
@@ -39,7 +39,7 @@ def load_flights
   @flights = YAML.load_file(path)
 end
 
-def within_time_range(arrival_time, searched_time)
+def within_range(arrival_time, searched_time)
   arrival_time = Time.parse(arrival_time)
   searched_time = Time.parse(searched_time)
   (arrival_time - searched_time).abs < 3600
@@ -50,12 +50,13 @@ def valid_time(input_time)
     session[:message] = "This is not a valid time input."
     return false
   end
-  return true
+  true
 end
 
 def find_flights_by_number
-  if @flights.key? params[:flight_number].upcase
-    @flights = @flights.select{ |key, value| key == params[:flight_number].upcase }
+  flight_number = params[:flight_number].upcase
+  if @flights.key? flight_number
+    @flights = @flights.select { |key, _| key == flight_number }
   else
     session[:message] = "Please enter a valid flight number."
     redirect "/"
@@ -63,11 +64,13 @@ def find_flights_by_number
 end
 
 def find_flights_by_place_of_departure
-  @flights = @flights.select { |number, info| info['From'].downcase.include? params[:place_of_departure].strip.downcase }
+  departure_place = params[:place_of_departure].strip.downcase
+  @flights = @flights.select { |_, info| info['From'].downcase.include? departure_place }
 end
 
 def narrow_down_flights_by_arrival_time
-  @flights = @flights.select { |number, info| within_time_range(info['Schedule'], params[:arrival_time]) }
+  arrival_time = params[:arrival_time]
+  @flights = @flights.select { |_, info| within_range(info['Schedule'], arrival_time) }
 end
 
 get "/" do
